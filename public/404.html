@@ -1,0 +1,51 @@
+<!doctype html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> 	<html lang="en"> <!--<![endif]-->
+<head>
+
+	<!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">	<!-- Force Latest IE rendering engine -->
+	<title>Skeleton: Beautiful Boilerplate for Responsive, Mobile-Friendly Development</title>
+	<meta name="description" content="">
+	<meta name="author" content="">
+	
+	<!-- Mobile Specific Metas
+  ================================================== -->
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" /> 
+	
+	<!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="stylesheets/base.css">
+	<link rel="stylesheet" href="stylesheets/skeleton.css">
+	<link rel="stylesheet" href="stylesheets/layout.css">
+	<!--[if lt IE9]><link rel="stylesheet" href="css/ie.css"><![endif]-->
+	
+	<!-- Favicon
+	================================================== -->
+	<link rel="shortcut icon" href="src/images/favicon.ico">
+
+</head>
+<body>
+
+
+	<!-- Primary Page Layout
+	================================================== -->			
+	<div class="container">
+		<h1 style="margin-top: 100px; text-align:center">Sorry. Couldn't Find That Page!</h1>
+	</div>
+
+
+		
+		<!-- JS
+		================================================== -->
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+		<script>window.jQuery || document.write("<script src='javascripts/jquery-1.5.1.min.js'>\x3C/script>")</script>
+		<script src="javascripts/app.js"></script>
+
+		
+	</body>
+</html>

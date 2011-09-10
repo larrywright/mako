@@ -1,6 +1,0 @@
-This is a basic template for a sinatra application. It gives you a basic structure, default gems, and some javascript and css
-Run 'tux' to get a "slick console":http://github.com/cldwalker/tux
-
-http://www.getskeleton.com/
-http://pigment.github.com/inputs/
-

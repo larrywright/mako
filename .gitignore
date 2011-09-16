@@ -3,3 +3,4 @@ config.yml
 tmp
 log/*.log*
 .DS_Store
+.redcar

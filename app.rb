@@ -2,6 +2,8 @@ require 'bundler'
 Bundler.require
 require 'sinatra/base'
 
+MongoMapper.database = "app"
+
 Dir["models/*.rb"].each do |model|
   require_relative model
 end
@@ -13,11 +15,6 @@ class App < Sinatra::Base
   get '/' do
     haml :index
   end
-
-  get '/bar' do
-    haml :foo
-  end
-
 
   not_found do
     haml :"static/404"

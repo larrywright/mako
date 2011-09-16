@@ -12,4 +12,4 @@ gem "tux", :platforms => [:mri_18, :mri_19]
 gem "sinatra-reloader"
 gem "mizuno"
 gem "sinatra-flash"
-gem 'pry', :group => :development
+# gem 'pry', :group => :development

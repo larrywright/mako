@@ -9,7 +9,5 @@ gem "rack"
 gem "haml"
 gem "tux", :platforms => [:mri_18, :mri_19]
 gem "sinatra-reloader"
-gem "mizuno"
-gem "spoon"
 gem "sinatra-flash"
 gem 'pry', :group => :development

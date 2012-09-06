@@ -1,23 +1,29 @@
-# Ratpack: Sinatra and Friends
+# Ratpack
 
-## What This Is
-This is a basic template for a sinatra application. It gives you a basic structure, default gems, and some javascript and css
+TODO: Write a gem description
 
-This exists because I need a way to try out ideas quickly. I frequently come up with ideas for little apps that I might want to build. I want to be able to try building something quickly, with minimal setup time. That's what Ratpack does. It gives me a basic sinatra setup with some good looking html and css to let me get from crazy idea to prototype in a hurry. 
+## Installation
 
-## The Building Blocks
+Add this line to your application's Gemfile:
 
-[Mongomapper](http://mongomapper.com/) Mongomapper (and of course MongoDB) are the easiest way to store data. No need to mess with migrations. Even if MongoDB isn't the right database to deploy a producion app on (though it may very well be), it's the fastest way to prototype one. You can always switch to PostgreSQL later on.
+    gem 'Ratpack'
 
-[Bootstrap](http://twitter.github.com/bootstrap/) Twitter's excellent css framework. 
+And then execute:
 
-[JQuery](http://jquery.org) Best darn Javascript framework around
+    $ bundle
 
-## What To Do Next
+Or install it yourself as:
 
-* Git clone this repository
-* rename 'app.rb' to something more meaningful
-* Run `bundle install` to install the gems
-* Change the `MongoMapper.database` to something meaningful in app.rb
-* Build something amazing
+    $ gem install Ratpack
 
+## Usage
+
+TODO: Write usage instructions here
+
+## Contributing
+
+1. Fork it
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create new Pull Request

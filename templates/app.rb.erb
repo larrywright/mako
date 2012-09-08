@@ -2,15 +2,18 @@ require 'bundler'
 Bundler.require
 require 'sinatra/base'
 
-MongoMapper.database = "app"
+MongoMapper.database = "<%= name.downcase %>_#{settings.environment}"
 
 Dir["models/*.rb"].each do |model|
   require_relative model
 end
 
-class App < Sinatra::Base
+class <%= name %> < Sinatra::Base
   set :public_folder, File.dirname(__FILE__) + '/public'
   require "sinatra/reloader"
+
+  before do
+  end
 
   get '/' do
     haml :index

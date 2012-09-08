@@ -1,0 +1,6 @@
+$LOAD_PATH << '.'
+require '<%= name.downcase %>'
+
+set :environment, ENV['RACK_ENV'].to_sym
+
+run <%= name %>

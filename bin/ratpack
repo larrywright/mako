@@ -1,3 +1,42 @@
 #!/usr/bin/env ruby
 
 require 'ratpack'
+require 'fileutils'
+require 'erb'
+
+name = ARGV[0]
+
+base_dir = FileUtils.pwd() + "/#{name.downcase}"
+template_dir = File.expand_path("../../templates", __FILE__)
+
+
+FileUtils.mkdir(base_dir) unless File.exists?(base_dir)
+
+ %w{public views spec models config}.each do |dir|
+  FileUtils.mkdir("#{name.downcase}/#{dir}") unless File.exists?("#{name.downcase}/#{dir}")
+ end
+
+#put .gitignore in directories that will be empty so that Git will retain them
+ %w{spec models config}.each do |dir|
+  FileUtils.touch("#{name.downcase}/#{dir}/.gitignore") unless File.exists?("#{name.downcase}/#{dir}/.gitignore")
+ end
+
+FileUtils.cp_r("#{template_dir}/public/","#{base_dir}/")
+FileUtils.cp_r("#{template_dir}/views/","#{base_dir}/")
+FileUtils.cp("#{template_dir}/Gemfile","#{base_dir}/Gemfile")
+FileUtils.cp("#{template_dir}/.gitignore","#{base_dir}/.gitignore")
+FileUtils.touch("#{base_dir}/README.md")
+
+File.open("#{base_dir}/config.ru",'w') do |f|
+  config = ERB.new(File.open("#{template_dir}/config.ru.erb").read)
+  f.write(config.result)
+end
+
+File.open("#{base_dir}/#{name.downcase}.rb",'w') do |f|
+  config = ERB.new(File.open("#{template_dir}/app.rb.erb").read)
+  f.write(config.result)
+end
+
+
+FileUtils.cd(base_dir)
+`git init && git add . && git commit -m 'Inital import'`

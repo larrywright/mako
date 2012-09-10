@@ -8,7 +8,7 @@ Gem::Specification.new do |gem|
   gem.version       = Ratpack::VERSION
   gem.authors       = ["Larry Wright"]
   gem.email         = ["larrywright@gmail.com"]
-  gem.description   = %q{TODO: Write a gem description}
+  gem.description   = "An application generator that creates a base Sinatra webapp"
   gem.summary       = %q{TODO: Write a gem summary}
   gem.homepage      = ""
 

@@ -1,0 +1,63 @@
+#!/usr/bin/env ruby
+
+require 'fileutils'
+require 'erb'
+require 'thor'
+require 'thor/group'
+
+class Mako < Thor::Group
+  include Thor::Actions
+
+  #TODO: Add some sort of auth
+
+  argument :name
+  source_root File.expand_path('../../templates', __FILE__)
+  desc "Creates a new web application with Sinatra, Twitter Bootstrap, and MongoDB"
+
+  def create_directories
+    empty_directory base_dir
+    %w{spec models config}.each do |dir|
+      empty_directory "#{base_name}/#{dir}"
+    end
+
+    #put .gitignore in directories that will be empty so that Git will retain them
+    %w{spec models config}.each do |dir|
+      FileUtils.touch("#{base_name}/#{dir}/.gitignore") unless File.exists?("#{base_name}/#{dir}/.gitignore")
+    end
+  end
+
+  def copy_templates
+    directory("#{template_dir}/public/","#{base_dir}/public/")
+    directory("#{template_dir}/views/","#{base_dir}/views/")
+    copy_file("#{template_dir}/Gemfile","#{base_dir}/Gemfile")
+    copy_file("#{template_dir}/.gitignore","#{base_dir}/.gitignore")
+    FileUtils.touch("#{base_dir}/README.md")
+  end
+
+  def generate_files
+    template("#{template_dir}/config.ru.tt","#{base_dir}/config.ru")
+    template("#{template_dir}/app.rb.tt","#{base_dir}/#{base_name}.rb")
+
+  end
+
+  def git_init
+    FileUtils.cd(base_dir)
+    `git init && git add . && git commit -m 'Inital import'`
+  end
+
+  private
+
+  def base_name
+    name.downcase
+  end
+
+  def base_dir
+    FileUtils.pwd() + "/#{base_name}"
+  end
+  def template_dir
+    File.expand_path("../../templates", __FILE__)
+  end
+
+end
+
+Mako.start

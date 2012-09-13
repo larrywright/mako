@@ -9,4 +9,6 @@ gem "haml"
 gem "tux", :platforms => [:mri_18, :mri_19]
 gem "sinatra-reloader"
 gem "sinatra-flash"
+gem "rdiscount"
 gem 'pry', :group => :development
+gem 'rspec', :group => :development
